@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--引入jQuery框架库文件-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <header class="header">
+            <div class="head_left">
+                用户管理系统
+            </div>
+            <div class="head_right">
+                <a href="#">帮助</a>
+                <a href="#">退出</a>
+            </div>
+        </header>
+        <div class="left">
+            <div class="left_top">
+                <div> <a href="#">用户查询</a></div>
+                <div><a href="userForm.html">用户新增</a></div>
+            </div>
+            <div class="left_bottom">
+                <img src="images/login.png" alt="加载失败">
+                <span>当前登录用户</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right_head">
+                <form action="#" method="post" class="form">
+                    用户名称：
+                    <input type="text" name="userName">
+                    <button>查询</button>
+                </form>
+            </div>
+            <div class="right_content">
+                <table class="tab">
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="checkAll"> 用户名称
+                        </th>
+                        <th>
+                            职业
+                        </th>
+                        <th>
+                            邮箱
+                        </th>
+                        <th>
+                            性别
+                        </th>
+                        <th>
+                            特长
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="checkbox"> 轻实训
+                        </td>
+                        <td>学生</td>
+                        <td>tiger@shixun.online</td>
+                        <td>男</td>
+                        <td>书法、乐器</td>
+                        <td>
+                            <button>编辑</button>&nbsp;&nbsp;
+                            <button id="delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="checkbox"> 王宇宙
+                        </td>
+                        <td>程序猿</td>
+                        <td>mike@qingshixun.com</td>
+                        <td>男</td>
+                        <td>运动</td>
+                        <td>
+                            <button>编辑</button>&nbsp;&nbsp;
+                            <button>删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="checkbox"> 张丽丽
+                        </td>
+                        <td>UI设计</td>
+                        <td>jessie@google.com</td>
+                        <td>女</td>
+                        <td>音乐</td>
+                        <td>
+                            <button>编辑</button>&nbsp;&nbsp;
+                            <button>删除</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--引入jQuery框架库文件-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+     <script type="text/javascript" src="js/common.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header class="header">
+            <div class="head_left">
+                用户管理系统
+            </div>
+            <div class="head_right">
+                <a href="#">帮助</a>
+                <a href="#">退出</a>
+            </div>
+        </header>
+        <div class="left">
+            <div class="left_top">
+                <div> <a href="userList.html">用户查询</a></div>
+                <div><a href="#">用户新增</a></div>
+            </div>
+            <div class="left_bottom">
+                <img src="images/login.png" alt="加载失败"> 
+                <span>当前登录用户</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right_head">
+                <h5>新增&编辑用户信息</h5>
+            </div>
+            <div class="right_content">
+                <form action="#" method="post" onsubmit="return registerValid()">
+                    <div class="username">
+                        用户名称：
+                        <input type="text" name="username" placeholder="请输入您的用户名！" id="username" autofocus="true" required>
+                    </div>
+                    <div class="password">
+                        登陆密码：
+                        <input type="password" name="password" placeholder="请输入您的密码" id="password" minlength="6" maxlength="20" required>
+                    </div>
+                    <div class="confirmPassword">
+                        重复密码：
+                        <input type="password" name="confirmPassword" placeholder="请输入您的确认密码" id="confirmPassword" minlength="6" maxlength="20" >
+                    </div>
+                    <div class="email">
+                        电子邮箱：
+                        <input type="email" name="email" placeholder="请输入您的邮箱" id="email" required>
+                    </div>
+                    <div class="sex">
+                        性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+                        <input type="radio" name="sex" checked>男
+                        <input type="radio" name="sex">女
+                    </div>
+                    <hr>
+                    <div class="submit">
+                        <button>保存</button>
+                        <button type="reset">重置</button>
+                        <button type="button">返回</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
