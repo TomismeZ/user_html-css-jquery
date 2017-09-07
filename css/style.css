@@ -87,20 +87,21 @@
 
     #container .left .left_bottom img {
         width: 80%;
-        height: 95%;
+        height: 85%;
         position: absolute;
         left: 10%;
         right: 10%;
-
     }
-#container .left .left_bottom span{
+
+    #container .left .left_bottom span {
         width: 80%;
         height: 95%;
         position: absolute;
         left: 10%;
         right: 10%;
         top: 95%;
-}
+    }
+
     #container .right {
         width: 82%;
         height: 84%;
@@ -111,16 +112,17 @@
     }
 
     #container .right .right_head {
-        width: 100%;
-        height: 15%;
+        width: 90%;
+        /*height: 13%;*/
         /*background-color: blue;*/
         position: absolute;
         margin-top: 3%;
-        font-size: 20px;
+        font-size: 19px;
         left: 2%;
     }
 
-    #container .right .right_head h5 {
+    #container .right .right_head h5{
+        
         text-align: center;
     }
 
@@ -132,39 +134,55 @@
     #container .right .right_head button {
         margin-left: 5px;
         height: 23px;
+      
     }
 
     #container .right .right_content {
         width: 96%;
-        height: 55%;
+        /*height: 55%;*/
         /*background-color: green;*/
         position: absolute;
-        top: 15%;
+        top: 12%;
         left: 2%;
         right: 2%;
     }
 
-    #container .right .right_content div {
+    #container .right .right_content .input-group {
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
         margin-bottom: 3%;
     }
 
-    #container .right .right_content div input {
-        width: 50%;
+    #container .right .right_content .input-group .input-content {
+        width: 70%;
+        /*对于外部其他元素是行内元素，对于内部是块级元素*/
+        display: inline-block;
+        text-align: left;
     }
 
-    #container .right .right_content .sex input {
-        width: 3%;
-        margin-left: 1%;
+    #container .right .right_content .input-group .input {
+        width: 70%;
+        height: 25px;
+        border: 1px solid black;
+        font-size: 15px;
+        padding-left: 10px;
     }
 
-    #container .right .right_content .submit {
-        margin-top: 3%;
-        margin-left: 20%;
+    #container .right .right_content .button-group {
+        width: 100%;
+        border-top: 1px solid black;
+        margin-top: 10px;
+        text-align: center;
+        padding-top: 30px;
+        letter-spacing: 30px;
     }
 
-    #container .right .right_content div button {
-        margin-left: 8%;
-       
+    #container .right .right_content .button-group button {
+        width: 100px;
+        height: 30px;
+        background-color: white;
     }
 
     #container .right .right_content .tab {
@@ -178,6 +196,7 @@
 
     .tab button {
         border: none;
+        background-color: #F0F0F0;
     }
 
     th {
@@ -191,10 +210,13 @@
         text-align: center;
     }
 
-/*    input:invalid+span::after {
-        content: "✖";
-    }
 
-    input:valid+span::after {
-        content: "✓";
-    }*/
+ /*   .input:invalid+span::after {
+            content: "×";
+            padding-left: 10px;
+        }
+
+        .input:valid+span::after {
+            content: "✓";
+            padding-left: 10px;
+     }*/
