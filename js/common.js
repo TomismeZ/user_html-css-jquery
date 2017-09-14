@@ -50,33 +50,81 @@
      $(window).resize(function() {
          resizeWindow();
      });
-     /**
-     实现全选和全不选功能
-           **/
-     $("#checkAll").click(function() {
 
-         if ($('input[name="checkbox"]').prop('checked')) {
-             $('input[name="checkbox"]').prop("checked", false);
-         } else {
-             $('input[name="checkbox"]').prop("checked", true);
-         }
+     var $container=$("#container");
+     var $table=$container.find("table");
+     $table.find("tr td:not(:first-child,:last-child)").on("click",function(){
+        var $this=$(this).parent();
+        var nowItem=$this.find("input[name='checkbox']");
+        //获取当前行CheckBox的状态值
+        var isChecked=nowItem.prop("checked");
+
+        //最新的状态值只需要与当前状态值相反即可
+        nowItem.prop("checked",!isChecked);
      });
 
      /**
+        查询用户名
+     **/
+     // $container.find("form button").on("click",function(){
+     //    var length=$container.find("form").find("input[name='userName']").length;
+     //    if(length==0){
+     //        alert("用户名不能为空！");
+     //    }
+        
+     // });
+     /**
+     实现全选和全不选功能
+           **/
+     $table.find("#checkAll").click(function() {
+        //获取列表中所有的checkbox
+        var checkboxItems=$table.find("input[name='checkbox']");
+
+        //获取列表中选中的checkBox
+        var checkedboxItems=$table.find("input[name='checkbox']:checked");
+
+        //如果两个列表的数量相等，表示所有的checkbox都被选中，则反选
+        //反之，则全选
+        var isChecked=checkboxItems.length===checkedboxItems.length;
+
+        //去两个列表长度判断的反值
+        checkboxItems.prop("checked",!isChecked);
+         // if ($('input[name="checkbox"]').prop('checked')) {
+         //     $('input[name="checkbox"]').prop("checked", false);
+         // } else {
+         //     $('input[name="checkbox"]').prop("checked", true);
+         // }
+     });
+
+     /**
+     使用SPA，在一个URL加载两个界面
+     **/
+/*     var $container=$("#container");
+
+     $container.find(".left").find("a").on("click",function(e){
+            //阻止a标签原有的默认事件
+            e.preventDefault();
+            //得到a标签href属性的值
+            var pageRef=$(this).prop("href");
+
+            //JQuery load页面
+            $container.load(pageRef);
+          
+     });
+*/
+     /**
          实现删除功能
      **/
-     $(".delete").click(function() {
-         var ckbs = $("input[name='checkbox']:checked");
+      $table.find(".delete").click(function() {
+         var ckbs = $table.find("input[name='checkbox']:checked");
          if (ckbs.size() == 0) {
              alert("要删除指定行，需选中要删除的行！");
              return;
          } else {
-             var result = confirm("确定要删除选中项？");
-             if (result == null) {
-                 result = confirm("确定要删除选中项？");
-             } else {
-                 ckbs.parent().parent().remove();
-             }
+    
+             if (confirm("确定要删除选中项？")) {
+                ckbs.parent().parent().remove();
+             } 
          }
          //遍历
          // ckbs.each(function() {
